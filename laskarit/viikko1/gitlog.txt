@@ -1,0 +1,104 @@
+commit 8c067f4f9aea681bc29955ae5abb364006528b26
+Author: Cosmo Ciancio <ciancio.cosmo@gmail.com>
+Date:   Wed Mar 15 16:41:03 2023 +0200
+
+    muutos ja lisäys
+
+ tiedostoja/file2             | 0
+ tiedostoja/{file1 => file22} | 0
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 1744e7a0b05cf26a5577cc9ff46184b64a82aa61
+Author: Cosmo Ciancio <ciancio.cosmo@gmail.com>
+Date:   Wed Mar 15 16:33:28 2023 +0200
+
+    lisäys
+
+ tiedostoja/file1 | 0
+ tiedostoja/file2 | 0
+ tiedostoja/file3 | 0
+ 3 files changed, 0 insertions(+), 0 deletions(-)
+
+commit dc34d407ddc8c37f41a5803f55623cbfb0905b3b
+Author: Cosmo Ciancio <ciancio.cosmo@gmail.com>
+Date:   Wed Mar 15 16:18:38 2023 +0200
+
+    uudelleennimeys
+
+ tiedosto.txt => eka.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 0b7c5108dccfde36032c5dc88bc8d7df53542b89
+Author: Cosmo Ciancio <ciancio.cosmo@gmail.com>
+Date:   Wed Mar 15 16:14:58 2023 +0200
+
+    poisto
+
+ toinen.txt | 1 -
+ 1 file changed, 1 deletion(-)
+
+commit 418ef4a863e1474959e58e0c991af33c32770358
+Author: Cosmo Ciancio <ciancio.cosmo@gmail.com>
+Date:   Wed Mar 15 16:10:11 2023 +0200
+
+    muutos ja lisäys
+
+ tiedosto.txt | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit c4c5599a65c1e9a0e16554fa7b4c4c50e02be894
+Author: Cosmo Ciancio <ciancio.cosmo@gmail.com>
+Date:   Wed Mar 15 16:04:34 2023 +0200
+
+    muutos ja lisäys
+
+ tiedosto.txt | 124 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-
+ 1 file changed, 123 insertions(+), 1 deletion(-)
+
+commit d700beef8c51510af7b06bd76077345ab2be6e1f
+Author: Cosmo Ciancio <ciancio.cosmo@gmail.com>
+Date:   Mon Mar 13 22:13:04 2023 +0200
+
+    muutos ja lisäys
+
+ stuff/balotelli.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 351770fe1a8d970c552a511c28915b64a057e0e8
+Author: Cosmo Ciancio <ciancio.cosmo@gmail.com>
+Date:   Mon Mar 13 22:10:32 2023 +0200
+
+    muutos ja lisäys
+
+ kolmas.txt | 1 +
+ toinen.txt | 1 +
+ 2 files changed, 2 insertions(+)
+
+commit a026925c7ab715e859a681e2be50db9c0b4bf485
+Author: Cosmo Ciancio <ciancio.cosmo@gmail.com>
+Date:   Mon Mar 13 22:08:42 2023 +0200
+
+    lisäys
+
+ kolmas.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit be695a6b39ae06929f2732e3032fcc4183241d69
+Author: Cosmo Ciancio <ciancio.cosmo@gmail.com>
+Date:   Mon Mar 13 22:05:08 2023 +0200
+
+    muutos ja lisäys
+
+ tiedosto.txt | 1 +
+ toinen.txt   | 0
+ 2 files changed, 1 insertion(+)
+
+commit 3827e1f3e806947bdc6b6fdade0c348c10b0d877
+Author: Cosmo Ciancio <ciancio.cosmo@gmail.com>
+Date:   Mon Mar 13 22:02:11 2023 +0200
+
+    tiedosto.txt luotu
+
+ tiedosto.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ciancio@lx2-fuxi298:~/ot_viikko1/tiedostoja$ 
