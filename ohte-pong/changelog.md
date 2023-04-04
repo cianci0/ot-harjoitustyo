@@ -1,0 +1,1 @@
+4.4.2023: Ball ja Paddle -luokkien luonti ja niiden testauksen aloittaminen
