@@ -10,5 +10,7 @@
 
 ###### Viikko 3:
 [monopoly](https://github.com/cianci0/ot-harjoitustyo/blob/master/laskarit/viikko3/monopoly.png)
+
 [benatankki ja moottori](https://github.com/cianci0/ot-harjoitustyo/blob/master/laskarit/viikko3/bensatankki_ja_moottori.png)
+
 [hsl](https://github.com/cianci0/ot-harjoitustyo/blob/master/laskarit/viikko3/hsl.png)
