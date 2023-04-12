@@ -1,5 +1,5 @@
 import unittest
-from objects.object import move, Ball, Paddle
+from objects.paddle import move, Ball, Paddle
 
 class TestObject(unittest.TestCase):
     def setUp(self):
@@ -19,3 +19,13 @@ class TestObject(unittest.TestCase):
     def test_paddle_movement_works(self):
         move(self.paddle, (1,-1))
         self.assertEqual((self.paddle.x, self.paddle.y), (201, 199))
+
+    def test_paddle_movement_at_border(self):
+        self.paddle = Paddle(400, 400)
+        move(self.paddle, (1, 1))
+        self.assertEqual((self.paddle.x, self.paddle.y), (400, 400))
+
+    def test_ball_movement_at_border(self):
+        self.ball = Ball(0, 0)
+        move(self.ball, (-1, 1))
+        self.assertEqual((self.ball.x, self.ball.y), (0, 0))
