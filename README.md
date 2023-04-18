@@ -1,4 +1,4 @@
-# Dokumentaatio
+### Dokumentaatio
 
 [Vaatiumsmäärittely](https://github.com/cianci0/ot-harjoitustyo/blob/master/ohte-pong/dokumentaatio/vaatimusmaarittely.md)
 
