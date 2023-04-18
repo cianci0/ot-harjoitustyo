@@ -17,8 +17,8 @@ class Ball:
     def randomize_velocity(self):
         self.velocity = [choice((-1, 1)), choice((-1, 1))]
 
+        # Check if ball collides with paddles. If so, change direction accordingly
     def check_collision_paddle(self, paddle_left, paddle_right):
-        """ Check if ball collides with paddles. If so, change direction accordingly """
         if self.x == paddle_left.x + 10 and self.y in range(paddle_left.y, paddle_left.y + paddle_left.height):
             self.velocity[0] *= -1
         elif self.x == paddle_right.x and self.y in range(paddle_right.y, paddle_right.y + paddle_right.height):

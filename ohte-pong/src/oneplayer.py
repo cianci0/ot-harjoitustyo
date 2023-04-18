@@ -1,1 +1,1 @@
-# Yksinpelinäkymä
+# Single-player view

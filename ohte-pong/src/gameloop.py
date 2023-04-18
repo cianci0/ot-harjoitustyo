@@ -1,15 +1,13 @@
-import pygame, os
-from random import choice
-from objects.movement import *
-from style import *
-from objects.player import Player
+import pygame as pg
+from objects.movement import Ball
 from objects.clock import Clock
+from style import window, black, white
 
 class Gameloop:
     def __init__(self, player1, player2):
         self.clock = Clock()
-        self.screen = pygame.display.set_mode(window)
-        self.font = pygame.font.SysFont("Comic Sans", 24)
+        self.screen = pg.display.set_mode(window)
+        self.font = pg.font.SysFont("Comic Sans", 24)
         self.ball = Ball(200, 200, window)
         self.player1 = player1
         self.player2 = player2
@@ -24,7 +22,7 @@ class Gameloop:
         text = self.font.render(f"{self.player1.name} {self.player1.points} – {self.player2.points} {self.player2.name}", True, white)
         self.screen.blit(text, (20, 10))
 
-        pygame.display.flip()
+        pg.display.flip()
 
     def loop(self):
         # Reset ball and paddles to starting positions
@@ -36,37 +34,31 @@ class Gameloop:
         self.ball.randomize_velocity()
 
         while True:
-            for event in pygame.event.get():
+            for event in pg.event.get():
                 
                 # Check which keys are being pressed
-                if event.type == pygame.KEYDOWN:
-                    if event.key == pygame.K_w:
+                if event.type == pg.KEYDOWN:
+                    if event.key == pg.K_w:
                         self.player1.paddle.up = True
-
-                    if event.key == pygame.K_s:
+                    if event.key == pg.K_s:
                         self.player1.paddle.down = True
-
-                    if event.key == pygame.K_UP:
+                    if event.key == pg.K_UP:
                         self.player2.paddle.up = True
-
-                    if event.key == pygame.K_DOWN:
+                    if event.key == pg.K_DOWN:
                         self.player2.paddle.down = True
 
                 # Check which keys are being released
-                if event.type == pygame.KEYUP:
-                    if event.key == pygame.K_w:
+                if event.type == pg.KEYUP:
+                    if event.key == pg.K_w:
                         self.player1.paddle.up = False
-
-                    if event.key == pygame.K_s:
+                    if event.key == pg.K_s:
                         self.player1.paddle.down = False
-
-                    if event.key == pygame.K_UP:
+                    if event.key == pg.K_UP:
                         self.player2.paddle.up = False
-
-                    if event.key == pygame.K_DOWN:
+                    if event.key == pg.K_DOWN:
                         self.player2.paddle.down = False
 
-                if event.type == pygame.QUIT:
+                if event.type == pg.QUIT:
                     exit()
 
             # Move paddles and ball
