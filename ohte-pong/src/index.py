@@ -37,8 +37,8 @@ singleplayer_button.pack(pady=10)
 twoplayer_button = tk.Button(root, text="Kaksinpeli", font=("Helvetica", 14), width=20, height=2, command=start_twoplayer, bg="#E63946", fg="white", activebackground="#E07178", activeforeground="white", relief=tk.RAISED)
 twoplayer_button.pack(pady=10)
 
-scoreboard_button = tk.Button(root, text="Avaa tulostaulu", font=("Helvetica", 14), width=20, height=2, command=open_standings, bg="#E63946", fg="white", activebackground="#E07178", activeforeground="white", relief=tk.RAISED)
-scoreboard_button.pack(pady=10)
+standings_button = tk.Button(root, text="Avaa tulostaulu", font=("Helvetica", 14), width=20, height=2, command=open_standings, bg="#E63946", fg="white", activebackground="#E07178", activeforeground="white", relief=tk.RAISED)
+standings_button.pack(pady=10)
 
 # Create footer
 footer = tk.Label(root, text="Ohjelmistotekniikka 2023", font=("Helvetica", 10), fg="white", bg="#1D3557")
