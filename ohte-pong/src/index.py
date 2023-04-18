@@ -27,8 +27,8 @@ root.geometry(f"400x400+{x}+{y}")
 root.configure(bg="#1D3557")
 
 # Create header
-title_label = tk.Label(root, text="Pong-peli", font=("Helvetica", 24), fg="white", bg="#1D3557")
-title_label.pack(pady=20)
+header = tk.Label(root, text="Pong-peli", font=("Helvetica", 24), fg="white", bg="#1D3557")
+header.pack(pady=20)
 
 # Create buttons
 singleplayer_button = tk.Button(root, text="Yksinpeli", font=("Helvetica", 14), width=20, height=2, command=start_oneplayer, bg="#E63946", fg="white", activebackground="#E07178", activeforeground="white", relief=tk.RAISED)
@@ -41,7 +41,7 @@ scoreboard_button = tk.Button(root, text="Avaa tulostaulu", font=("Helvetica", 1
 scoreboard_button.pack(pady=10)
 
 # Create footer
-footer_label = tk.Label(root, text="Ohjelmistotekniikka 2023", font=("Helvetica", 10), fg="white", bg="#1D3557")
-footer_label.pack(side="bottom", pady=10)
+footer = tk.Label(root, text="Ohjelmistotekniikka 2023", font=("Helvetica", 10), fg="white", bg="#1D3557")
+footer.pack(side="bottom", pady=10)
 
 root.mainloop()

@@ -27,9 +27,8 @@ class Gameloop:
         pygame.display.flip()
 
     def loop(self):
-
         # Reset ball and paddles to starting positions
-        self.ball.reset() 
+        self.ball.reset()
         self.player1.paddle.reset()
         self.player2.paddle.reset()
 
@@ -78,7 +77,7 @@ class Gameloop:
             # Check if ball has reached wall. If so, increase player score and restart game loop
             if self.ball.check_collision_wall() == 1:
                 self.player2.increase_points()
-                self.loop() 
+                self.loop()
 
             elif self.ball.check_collision_wall() == 2:
                 self.player1.increase_points()
