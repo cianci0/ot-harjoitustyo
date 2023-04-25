@@ -7,5 +7,9 @@
 ### 18.4.2023 - 20 tuntia
 - Pelilogiikan ja renderöinnin toteutus sekä aloitus- ja kaksinpelinäkymien luonti
 
-### Yhteensä 26 tuntia
+### 25.4.2023 - 9 tuntia
+- NPCPaddle-luokan luonti ja sen testauksen toteutus
+- Käyttöliittymän edistäminen
+
+### Yhteensä 35 tuntia
 
