@@ -1,10 +1,11 @@
 import unittest
-from objects.movement import *
+from objects.movement import Ball, Paddle, NPCPaddle
 
 class TestObject(unittest.TestCase):
     def setUp(self):
         self.ball = Ball(200, 200, (400, 400))
         self.paddle = Paddle(10, 175, 400)
+        self.npc = NPCPaddle(10, 175, 400, self.ball)
     
     def test_ball_constructor_works(self):
         self.assertNotEqual(self.ball, None)
@@ -45,6 +46,10 @@ class TestObject(unittest.TestCase):
         self.ball.reset()
         self.assertEqual((self.ball.x, self.ball.y), (200, 200))
 
+    def test_ball_velocity_increase_works(self):
+        self.ball.increase_velocity()
+        self.assertEqual(self.ball.velocity, [2, 2])
+
     def test_paddle_constructor_works(self):
         self.assertNotEqual(self.paddle, None)
 
@@ -69,3 +74,24 @@ class TestObject(unittest.TestCase):
         self.paddle.move()
         self.paddle.reset()
         self.assertEqual((self.paddle.x, self.paddle.y), (10, 175))
+
+    def test_paddle_velocity_increase_works(self):
+        self.paddle.increase_velocity()
+        self.assertEqual(self.paddle.velocity, 3)
+
+    def test_npcpaddle_constructor_works(self):
+        self.assertNotEqual(self.npc, None)
+
+    def test_npcpaddle_doesnt_move_when_level_with_ball(self):
+        self.npc.follow_ball()
+        self.assertEqual((self.npc.up, self.npc.down), (False, False))
+
+    def test_npcpaddle_follows_ball_up(self):
+        self.ball.y = 100
+        self.npc.follow_ball()
+        self.assertEqual(self.npc.up, True)
+
+    def test_npcpaddle_follows_ball_down(self):
+        self.ball.y = 300
+        self.npc.follow_ball()
+        self.assertEqual(self.npc.down, True)
