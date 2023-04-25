@@ -78,7 +78,6 @@ class Paddle:
     def draw(self, screen):
         pygame.draw.rect(screen, (white), (self.x, self.y, self.width, self.height))
 
-# NPC opponent
 class NPCPaddle(Paddle):
     def __init__(self, x, y, window_height, ball):
         super().__init__(x, y, window_height)
