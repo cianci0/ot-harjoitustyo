@@ -1,7 +1,7 @@
 # Ohjelman arkkitehtuuri
 
-### Pakkauskaavio
+### Luokkakaavio
 ![Luokkakaavio](./kuvat/luokka.png)
 
-### Luokkakaavio
+### Pakkauskaavio
 ![Pakkauskaavio](./kuvat/pakkaus.png)
