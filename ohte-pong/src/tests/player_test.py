@@ -11,3 +11,8 @@ class TestObject(unittest.TestCase):
     def test_player_increase_points_works(self):
         self.player.increase_points()
         self.assertEqual(self.player.points, 1)
+    
+    def test_player_reset_points_works(self):
+        self.player.increase_points()
+        self.player.reset_points()
+        self.assertEqual(self.player.points, 0)

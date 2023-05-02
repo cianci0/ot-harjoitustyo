@@ -11,6 +11,8 @@ python = "^3.8"
 invoke = "^2.0.0"
 coverage = "^7.2.3"
 pygame = "^2.3.0"
+numpy = "^1.24.3"
+autopep8 = "^2.0.2"
 
 
 [tool.poetry.group.dev.dependencies]

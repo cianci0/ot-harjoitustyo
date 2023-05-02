@@ -2,7 +2,22 @@ from random import choice
 import pygame
 from style import white
 
+
 class Ball:
+    """Ball class
+
+       Attributes:
+       x: integer value for x-coordinate.
+       x_orig: integer value for starting x-coordinate that doesn't change.
+       y: integer value for y-coordinate.
+       y_orig: integer value for starting y-coordinate that doesn't change.
+       diameter: integer value for ball diameter.
+       speed: integer value for velocity (pixels per tick).
+       velocity: list value for directional velocity. velocity[0] = speed on x-axis, velocity[1] = speed on y-axis.
+       window_width: integer value for width of the window that the ball exists in.
+       window_height: integer value for height of the window that the ball exists in.
+    """
+    
     def __init__(self, x, y, window):
         self.x = self.x_orig = x
         self.y = self.y_orig = y
@@ -16,7 +31,8 @@ class Ball:
         self.y += self.velocity[1]
 
     def randomize_velocity(self):
-        self.velocity = [choice([-self.speed, self.speed]), choice([-self.speed, self.speed])]
+        self.velocity = [choice([-self.speed, self.speed]),
+                         choice([-self.speed, self.speed])]
 
     def increase_velocity(self):
         self.speed += 1
@@ -27,8 +43,11 @@ class Ball:
     def check_collision_paddle(self, paddle_left, paddle_right):
         if self.x == paddle_left.x + 10 and self.y in range(paddle_left.y, paddle_left.y + paddle_left.height):
             self.velocity[0] *= -1
+            return True
         elif self.x == paddle_right.x and self.y in range(paddle_right.y, paddle_right.y + paddle_right.height):
             self.velocity[0] *= -1
+            return True
+        return False
 
     # Check if ball collides with ceiling or floor. If so, change direction accordingly
     def check_collision_ceiling_floor(self):
@@ -52,6 +71,20 @@ class Ball:
 
 
 class Paddle:
+    """Paddle class
+
+       Attributes:
+       x: integer value for x-coordinate.
+       x_orig: integer value for starting x-coordinate that doesn't change.
+       y: integer value for y-coordinate.
+       y_orig: integer value for starting y-coordinate that doesn't change.
+       width: integer value for paddle width.
+       height: integer value for paddle height.
+       up: Boolean value; True if paddle is being instructed to move up, otherwise False.
+       down: Boolean value; True if paddle is being instructed to move down, otherwise False.
+       velocity: integer value for speed on y-axis (pixels per tick).
+       boundary: integer value for height of the window that the paddle exists in.
+    """
     def __init__(self, x, y, window_height):
         self.x = self.x_orig = x
         self.y = self.y_orig = y
@@ -76,15 +109,31 @@ class Paddle:
         self.velocity += 1
 
     def draw(self, screen):
-        pygame.draw.rect(screen, (white), (self.x, self.y, self.width, self.height))
+        pygame.draw.rect(
+            screen, (white), (self.x, self.y, self.width, self.height))
+
 
 class NPCPaddle(Paddle):
+    """Class for non-player character paddle that inherits the Paddle class.
+
+       Attributes:
+       x: integer value for x-coordinate.
+       x_orig: integer value for starting x-coordinate that doesn't change.
+       y: integer value for y-coordinate.
+       y_orig: integer value for starting y-coordinate that doesn't change.
+       width: integer value for paddle width.
+       height: integer value for paddle height.
+       up: Boolean value; True if paddle is being instructed to move up, otherwise False.
+       down: Boolean value; True if paddle is being instructed to move down, otherwise False.
+       velocity: integer value for speed on y-axis (pixels per tick).
+       boundary: integer value for height of the window that the paddle exists in.
+       ball: Ball object for NPCPaddle to follow.
+    """
     def __init__(self, x, y, window_height, ball):
         super().__init__(x, y, window_height)
         self.ball = ball
 
     def follow_ball(self):
-        # Follow ball movement
         if self.ball.y < self.y + self.height // 2:
             self.up = True
             self.down = False
