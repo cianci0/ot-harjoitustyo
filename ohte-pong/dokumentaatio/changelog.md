@@ -8,3 +8,7 @@
 ### 25.4.2023 
 - NPCPaddle-luokan luonti ja sen testauksen toteutus
 - Koko ohjelman testikattavuus nyt 43%
+
+### 2.5.2023
+- Pelisilmukan ja käyttöliittymän yhteistoiminnan korjaaminen. Nyt pelinäkymän sulkemisen jälkeen käyttöliittymä aukeaa tarkoituksenmukaisesti.
+- Yksin- ja kaksinpelin lopetusnäkymien toteutus pygamessa.
