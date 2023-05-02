@@ -1,5 +1,6 @@
 # Ohjelman arkkitehtuuri
 
+Luokkakaavio
 ### Luokkakaavio
 ![Luokkakaavio](./kuvat/luokka.png)
 
