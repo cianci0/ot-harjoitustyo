@@ -1,6 +1,6 @@
 ### Ohjelman käynnistys
 
-Komento "poetry run invoke start" käynnistää ohjelman. Sulkiessasi pelinäkymän saatat palata aloitusvalikkoon, tai koko ohjelma saattaa sulkeutua. Tarkoituksenmukaista olisi, että pelinäkymän sulkeminen veisi takaisin aloitusvalikkoon.
+Komento "poetry run invoke start" käynnistää ohjelman.
 
 ### Dokumentaatio
 
