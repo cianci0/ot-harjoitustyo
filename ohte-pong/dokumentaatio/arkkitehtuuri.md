@@ -1,6 +1,6 @@
 # Ohjelman arkkitehtuuri
 
-Luokkakaavio
+Ohjelmassa on kokonaisuudessaan kuusi luokkaa, joista kaksinpelissä käytetään vain viittä (NPCPaddle jää pois).
 ### Luokkakaavio
 ![Luokkakaavio](./kuvat/luokka.png)
 
