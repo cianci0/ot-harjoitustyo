@@ -11,5 +11,11 @@
 - NPCPaddle-luokan luonti ja sen testauksen toteutus
 - Käyttöliittymän edistäminen
 
-### Yhteensä 35 tuntia
+### 2.5.2023 - 10 tuntia
+- Gameloop-luokan ja käyttöliittymän yhteistoiminnan korjaus
+- Yksin- ja kaksinpelien lopetusnäkymien ja niiden logiikan toteutus
+- Ohjenäkymän toteutus
+- Docstring
+
+### Yhteensä 45 tuntia
 
