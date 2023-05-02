@@ -4,6 +4,6 @@ Ohjelmassa on kokonaisuudessaan kuusi luokkaa, joista kaksinpelissä käytetää
 ### Luokkakaavio
 ![Luokkakaavio](./kuvat/luokka.png)
 
+Tällä hetkellä ohjelman käyttöliittymä on kokonaan index.py -tiedostossa, mutta tarkoituksenani on jakaa se järkeviin osiin uuteen ui-hakemistoon, josta tulee objects-hakemiston rinnakkaishakemisto.
 ### Pakkauskaavio
 ![Pakkauskaavio](./kuvat/pakkaus.png)
-Tällä hetkellä ohjelman käyttöliittymä on kokonaan index.py -tiedostossa, mutta tarkoituksenani on jakaa se järkeviin osiin uuteen ui-hakemistoon, josta tulee objects-hakemiston rinnakkaishakemisto.
