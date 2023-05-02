@@ -16,5 +16,4 @@ ja käynnistä ohjelma komennolla
 poetry run invoke start
 ```
 
-## Ohjelman käynnistäminen
 Pääset juuri avautuneesta päävalikosta käsiksi pelin ohjeisiin painamalla "Ohjeet"-nappia
