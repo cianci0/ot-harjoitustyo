@@ -16,20 +16,20 @@ Pong-peli, jota voi pelata yksin tietokonetta vastaan tai kaksinpelinä yhdellä
 
 ### Yksinpeli
 
-- Pelin alussa pallo on keskellä ikkunaa. :heavy_check_mark: Se lähtee liikkumaan satunnaiseen suuntaan kun käyttäjä painaa ensimmäistä kertaa välilyöntinäppäintä. 
+- Pelin alussa pallo on keskellä ikkunaa. Se lähtee liikkumaan satunnaiseen suuntaan kun käyttäjä painaa ensimmäistä kertaa välilyöntinäppäintä. :heavy_check_mark:
 - Ikkunan yläreunassa näkyy pelaajan nimi ja pisteet. :heavy_check_mark:
 - Pelaaja saa pisteen aina, kun pallo osuu vastustajan seinään. :heavy_check_mark:
 - Pallon liike nopeutuu tasaisesti.
-- Peli päättyy, kun pallo osuu pelaajan mailan takana olevaan seinään.
+- Peli päättyy, kun pallo osuu pelaajan mailan takana olevaan seinään. :heavy_check_mark:
 - Pelin päätyttyä kierroksen pisteet ja pelaajan nimi tallennetaan tietokantaan.
 
 ### Kaksinpeli
 
-- Pelin alussa pallo on keskellä ikkunaa. :heavy_check_mark: Se lähtee liikkumaan satunnaiseen suuntaan kun käyttäjä painaa ensimmäistä kertaa välilyöntinäppäintä. 
+- Pelin alussa pallo on keskellä ikkunaa. Se lähtee liikkumaan satunnaiseen suuntaan kun käyttäjä painaa ensimmäistä kertaa välilyöntinäppäintä. :heavy_check_mark:
 - Ikkunan yläreunassa näkyvät pelaajien nimet ja pisteet. :heavy_check_mark:
 - Pelaaja saa pisteen aina, kun pallo osuu toisen pelaajan mailaan takana olevaan seinään. :heavy_check_mark:
 - Pallon liike nopeutuu tasaisesti.
-- Peli päättyy, kun yhdellä pelaajista on ennen pelin aloitusta määritellyn pistemäärän verran pisteitä (esim 10 tai 20 pistettä)
+- Peli päättyy, kun yhdellä pelaajista on ennen pelin aloitusta määritellyn pistemäärän verran pisteitä (esim 10 tai 20 pistettä) :heavy_check_mark:
 
 ## Jatkokehitysideoita
 
