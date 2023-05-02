@@ -20,6 +20,7 @@ Käyttöliittymä sisältää viisi eri näkymää:
   - yksinpelinäkymään
   - kaksinpelinäkymään
   - tulostaulunäkymään
+ 
   ja
   - ohjenäkymään
 
