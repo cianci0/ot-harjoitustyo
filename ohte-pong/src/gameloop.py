@@ -46,6 +46,8 @@ class Gameloop:
         self.dark = COLORS[0][1]
 
     def change_theme(self):
+        if self.is_paused:
+            return False
         current = self.colors.pop(0)
         self.light = self.colors[0][0]
         self.dark = self.colors[0][1]
@@ -129,7 +131,7 @@ class Gameloop:
         self.ball.reset()
         self.player1.paddle.reset()
         self.player2.paddle.reset()
-        self.ball.randomize_velocity()
+        self.ball.randomize_velocity(self.twoplayer)
 
         while self.running:
             self.event_loop()

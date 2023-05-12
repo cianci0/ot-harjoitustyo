@@ -1,5 +1,3 @@
-# Database for single-player highscores
-
 import sqlite3
 
 db = sqlite3.connect("scores.db") 

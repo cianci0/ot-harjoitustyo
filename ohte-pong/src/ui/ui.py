@@ -71,8 +71,9 @@ class Ui:
             self.root.destroy()
             oneplayer.start(player1_name, player2_name, length=10)
             init_window()
+
         self.start_button.config(command=start_game)
-        self.start_button.pack(pady=(30,10))
+        self.start_button.pack(pady=(120,5))
 
         def reopen_menu():
             self.open_mainmenu(False)
@@ -90,24 +91,36 @@ class Ui:
         self.forget_mainmenu()
 
         player1_label = tk.Label(self.root, text="Pelaajan 1 nimi:", font=TEXT_FONT, fg="white", bg="#1D3557")
-        player1_label.pack(pady=(30,10))
+        player1_label.pack(pady=(20, 5))
         player1_entry = tk.Entry(self.root, font=TEXT_FONT)
-        player1_entry.pack(pady=10)
+        player1_entry.pack(pady=(3, 5))
 
         player2_label = tk.Label(self.root, text="Pelaajan 2 nimi:", font=TEXT_FONT, fg="white", bg="#1D3557")
-        player2_label.pack(pady=10)
+        player2_label.pack(pady=5)
         player2_entry = tk.Entry(self.root, font=TEXT_FONT)
-        player2_entry.pack(pady=10)
+        player2_entry.pack(pady=(3, 5))
+
+        length_var = tk.StringVar(value="5")
+        length_label = tk.Label(self.root, text="Pelin pituus (pisteinä):", font=TEXT_FONT, fg="white", bg="#1D3557")
+        length_label.pack(pady=(10, 0))
+        length_frame = tk.Frame(self.root, bg="#1D3557")
+        length_frame.pack()
+        length3_button = tk.Radiobutton(length_frame, text="3", variable=length_var, value="3", font=TEXT_FONT, bg="#1D3557", fg="white", activebackground="#1D3557", activeforeground="white", selectcolor="#E63946", highlightthickness=0)
+        length3_button.pack(side="left", pady=(0,10))
+        length5_button = tk.Radiobutton(length_frame, text="5", variable=length_var, value="5", font=TEXT_FONT, bg="#1D3557", fg="white", activebackground="#1D3557", activeforeground="white", selectcolor="#E63946", highlightthickness=0)
+        length5_button.pack(side="left", pady=(0,10))
+        length10_button = tk.Radiobutton(length_frame, text="10", variable=length_var, value="10", font=TEXT_FONT, bg="#1D3557", fg="white", activebackground="#1D3557", activeforeground="white", selectcolor="#E63946", highlightthickness=0)
+        length10_button.pack(side="left", pady=(0,10))
 
         def start_game():
             player1_name = player1_entry.get()
             player2_name = player2_entry.get()
             self.root.destroy()
-            twoplayer.start(player1_name, player2_name, length=10)
+            twoplayer.start(player1_name, player2_name, length=int(length_var.get()))
             init_window()
 
         self.start_button.config(command=start_game)
-        self.start_button.pack(pady=(30,10))
+        self.start_button.pack(pady=(5, 0))
 
         def reopen_menu():
             self.open_mainmenu(False)
@@ -115,11 +128,13 @@ class Ui:
             player1_entry.pack_forget()
             player2_label.pack_forget()
             player2_entry.pack_forget()
+            length_label.pack_forget()
+            length_frame.pack_forget()
             self.start_button.pack_forget()
             self.back_button.pack_forget()
 
         self.back_button.config(command=reopen_menu)
-        self.back_button.pack(pady=10)
+        self.back_button.pack(pady=(5, 10), side="bottom")
 
         self.root.mainloop()
 

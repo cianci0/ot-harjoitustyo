@@ -29,9 +29,12 @@ class Ball:
         self.x += self.velocity[0]
         self.y += self.velocity[1]
 
-    def randomize_velocity(self):
-        self.velocity = [choice([-self.speed, self.speed]),
-                         choice([-self.speed, self.speed])]
+    def randomize_velocity(self, twoplayer):
+        if twoplayer:
+            self.velocity = [choice([-self.speed, self.speed]),
+                            choice([-self.speed, self.speed])]
+        else:
+            self.velocity = [-1, choice([-self.speed, self.speed])]
 
     def increase_velocity(self):
         self.speed += 1
