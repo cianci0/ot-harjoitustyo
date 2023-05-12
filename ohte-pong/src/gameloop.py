@@ -1,7 +1,10 @@
-import pygame as pg, os
+import pygame as pg
+import numpy as np
+import os
+from random import randrange
 from objects.movement import Ball
 from objects.clock import Clock
-from style import window, black, white
+from style import WINDOW, COLORS
 
 class Gameloop:
     """Class for handling game loop
@@ -25,11 +28,11 @@ class Gameloop:
         os.environ['SDL_VIDEO_CENTERED'] = '1'
         pg.init()
         pg.display.set_caption("Pong")
-        self.screen = pg.display.set_mode(window)
+        self.screen = pg.display.set_mode(WINDOW)
         self.font = pg.font.SysFont("Comic Sans", 24)
         self.twoplayer = twoplayer
         self.clock = Clock()
-        self.ball = Ball(200, 200, window)
+        self.ball = Ball(200, 200, WINDOW)
         self.player1 = player1
         self.player2 = player2
         self.length = length
@@ -37,45 +40,91 @@ class Gameloop:
         self.ended = False
         self.running = True
         self.rally_length = 0
+        self.temporary_score_list = []
+        self.colors = COLORS
+        self.light = COLORS[0][0]
+        self.dark = COLORS[0][1]
+
+    def change_theme(self):
+        current = self.colors.pop(0)
+        self.light = self.colors[0][0]
+        self.dark = self.colors[0][1]
+        self.colors.append(current)
+
+    def event_loop(self):
+        for event in pg.event.get():
+            if event.type == pg.KEYDOWN:
+                if event.key == pg.K_w:
+                    self.player1.paddle.up = True
+                if event.key == pg.K_s:
+                    self.player1.paddle.down = True
+                if self.twoplayer:
+                    if event.key == pg.K_UP:
+                        self.player2.paddle.up = True
+                    if event.key == pg.K_DOWN:
+                        self.player2.paddle.down = True
+
+                if event.key == pg.K_SPACE:
+                    self.is_paused = not self.is_paused
+
+                if event.key == pg.K_c:
+                    self.change_theme()
+
+            if event.type == pg.KEYUP:
+                if event.key == pg.K_w:
+                    self.player1.paddle.up = False
+                if event.key == pg.K_s:
+                    self.player1.paddle.down = False
+                if self.twoplayer:
+                    if event.key == pg.K_UP:
+                        self.player2.paddle.up = False
+                    if event.key == pg.K_DOWN:
+                        self.player2.paddle.down = False
+
+            if event.type == pg.QUIT:
+                self.running = False
 
     def display_score(self):
         if self.twoplayer:
-            text = self.font.render(f"{self.player1.name} {self.player1.points} – {self.player2.points} {self.player2.name}", True, white)
+            score = f"{self.player1.name} {self.player1.points} – {self.player2.points} {self.player2.name}"
+            text = self.font.render(score, True, self.light)
         else:
-            text = self.font.render(f"Pisteet: {self.rally_length}", True, white)
+            text = self.font.render(f"Pisteet: {self.rally_length}", True, self.light)
         self.screen.blit(text, (20, 10))
 
     def render(self):
-        # Draw ball and paddles, display score
-        self.screen.fill(black)
+        self.screen.fill(self.dark)
         self.ball.draw(self.screen)
         self.player1.paddle.draw(self.screen)
         self.player2.paddle.draw(self.screen)
 
     def end(self, player):
         running = True
-        self.screen.fill(black)
+        self.screen.fill(self.dark)
         while running:
             for event in pg.event.get():
                 if event.type == pg.KEYDOWN:
                     if event.key == pg.K_SPACE:
                         self.ended = False
+                        score = (self.player1.name, self.rally_length)
+                        self.temporary_score_list.append(score)
                         return True
                 if event.type == pg.QUIT:
                     self.ended = True
+                    score = (self.player1.name, self.rally_length)
+                    self.temporary_score_list.append(score)
                     return False
             if self.twoplayer:
-                text = self.font.render(f"Pelaaja {player} voitti!", True, white)
-                text_rect = text.get_rect(center=(window[0] // 2, window[1] // 2))
+                text = self.font.render(f"Pelaaja {player} voitti!", True, self.light)
+                text_rect = text.get_rect(center=(WINDOW[0] // 2, WINDOW[1] // 2))
                 self.screen.blit(text, text_rect)
                 pg.display.flip()
             elif self.twoplayer is False:
-                text = self.font.render(f"Peli päättyi, sait {self.rally_length} pistettä", True, white)
-                text_rect = text.get_rect(center=(window[0] // 2, window[1] // 2))
+                text = self.font.render(f"Peli päättyi, sait {self.rally_length} pistettä", True, self.light)
+                text_rect = text.get_rect(center=(WINDOW[0] // 2, WINDOW[1] // 2))
                 self.screen.blit(text, text_rect)
                 pg.display.flip()
- 
-    
+
     def loop(self):
         self.ball.reset()
         self.player1.paddle.reset()
@@ -83,35 +132,7 @@ class Gameloop:
         self.ball.randomize_velocity()
 
         while self.running:
-            for event in pg.event.get():
-                if event.type == pg.KEYDOWN:
-                    if event.key == pg.K_w:
-                        self.player1.paddle.up = True
-                    if event.key == pg.K_s:
-                        self.player1.paddle.down = True
-                    if self.twoplayer:
-                        if event.key == pg.K_UP:
-                            self.player2.paddle.up = True
-                        if event.key == pg.K_DOWN:
-                            self.player2.paddle.down = True
-
-                    if event.key == pg.K_SPACE:
-                        self.is_paused = not self.is_paused
-
-                if event.type == pg.KEYUP:
-                    if event.key == pg.K_w:
-                        self.player1.paddle.up = False
-                    if event.key == pg.K_s:
-                        self.player1.paddle.down = False
-                    if self.twoplayer:
-                        if event.key == pg.K_UP:
-                            self.player2.paddle.up = False
-                        if event.key == pg.K_DOWN:
-                            self.player2.paddle.down = False
-
-                if event.type == pg.QUIT:
-                    self.running = False
-
+            self.event_loop()
             if not self.is_paused:
                 self.player1.paddle.move()
                 if not self.twoplayer:
@@ -127,6 +148,7 @@ class Gameloop:
                         self.running = False
                     self.player2.increase_points()
                     self.rally_length = 0
+
                     if self.player2.points == self.length:
                         if self.end(2) is False:
                             self.running = False
@@ -153,14 +175,16 @@ class Gameloop:
                 self.display_score()
                 pg.display.flip()
                 self.clock.tick(160)
-            
+
             else:
                 if not self.ended:
-                    text = self.font.render("Paused", True, white)
-                    text_rect = text.get_rect(center=(window[0] // 2, window[1] // 2))
+                    text = self.font.render("Paina välilyöntiä", True, self.light)
+                    text_rect = text.get_rect(center=(WINDOW[0] // 2, WINDOW[1] // 2))
                     self.screen.blit(text, text_rect)
                     pg.display.flip()
-            
-        # Hide pygame window
-        self.screen = pg.display.set_mode(window, flags=pg.HIDDEN)
+
+        self.screen = pg.display.set_mode(WINDOW, flags=pg.HIDDEN)
+
+        if not self.twoplayer:
+            return self.temporary_score_list
         return True

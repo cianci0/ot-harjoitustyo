@@ -1,7 +1,6 @@
 from random import choice
 import pygame
-from style import white
-
+from style import WHITE
 
 class Ball:
     """Ball class
@@ -39,7 +38,6 @@ class Ball:
         self.velocity[0] = self.speed
         self.velocity[1] = self.speed
 
-    # Check if ball collides with paddles. If so, change direction accordingly
     def check_collision_paddle(self, paddle_left, paddle_right):
         if self.x == paddle_left.x + 10 and self.y in range(paddle_left.y, paddle_left.y + paddle_left.height):
             self.velocity[0] *= -1
@@ -49,17 +47,14 @@ class Ball:
             return True
         return False
 
-    # Check if ball collides with ceiling or floor. If so, change direction accordingly
     def check_collision_ceiling_floor(self):
         if self.y <= 0 or self.y >= self.window_height:
             self.velocity[1] *= -1
 
     def check_collision_wall(self):
         if self.x <= 0:
-            # Ball has reached left wall
             return 1
         elif self.x >= self.window_width:
-            # Ball has reached right wall
             return 2
 
     def reset(self):
@@ -67,7 +62,7 @@ class Ball:
         self.y = self.y_orig
 
     def draw(self, screen):
-        pygame.draw.circle(screen, (white), (self.x, self.y), self.diameter)
+        pygame.draw.circle(screen, (WHITE), (self.x, self.y), self.diameter)
 
 
 class Paddle:
@@ -104,13 +99,15 @@ class Paddle:
     def reset(self):
         self.x = self.x_orig
         self.y = self.y_orig
+        self.up = False
+        self.down = False
 
     def increase_velocity(self):
         self.velocity += 1
 
     def draw(self, screen):
         pygame.draw.rect(
-            screen, (white), (self.x, self.y, self.width, self.height))
+            screen, (WHITE), (self.x, self.y, self.width, self.height))
 
 
 class NPCPaddle(Paddle):

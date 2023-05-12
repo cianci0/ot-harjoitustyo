@@ -1,18 +1,25 @@
-white = (255, 255, 255)
-black = (0, 0, 0)
-ui_text_font = ("Helvetica", 14)
-ui_header_font = ("Helvetica", 24)
-inst_text = """        Mailoja ohjataan WASD-
-        ja nuolinäppäimillä
+COLORS = [((255, 255, 255), (0, 0, 0)),
+((255, 255, 255), (12, 82, 141)),
+((242, 230, 221), (34, 50, 52)),
+((255, 95, 31), (0, 0, 0)),
+((245, 245, 245), (66, 66, 66)),
+((150, 14, 60), (60, 190, 255))]
+
+WHITE = COLORS[0][0]
+
+TEXT_FONT = ("Helvetica", 14)
+HEADER_FONT = ("Helvetica", 24)
+INST_TEXT = """      Mailoja ohjataan WS- ja nuolinäppäimillä
         
-        Välilyönti aloittaa, pausettaa ja 
-        pelin päätyttyä aloittaa uuden pelin
+      Välilyönti aloittaa ja pausettaa pelin 
 
-        Yksinpeli päättyy, kun pallo osuu 
-        takanasi olevaan seinään
+      Yksinpeli päättyy, kun pallo osuu 
+      takanasi olevaan seinään
 
-        Kaksinpeli päättyy, kun toinen 
-        pelaajista saavuttaa 10 pistettä
+      Kaksinpeli päättyy, kun toinen 
+      pelaajista saavuttaa 10 pistettä
+
+      C vaihtaa väriteemaa
         """
 
-window = 400, 400 # Pygame window size
+WINDOW = 400, 400

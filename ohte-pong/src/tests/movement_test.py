@@ -36,6 +36,11 @@ class TestObject(unittest.TestCase):
         ball.check_collision_ceiling_floor()
         self.assertEqual(ball.velocity[1], -1)
 
+    def test_ball_collision_with_ceiling_returns_false(self):
+        ball = Ball(200, 200, (400, 400))
+        ball.check_collision_ceiling_floor()
+        self.assertEqual(ball.velocity[1], 1)
+
     def test_ball_collision_with_left_wall(self):
         ball = Ball(0, 200, (400, 400))
         a = ball.check_collision_wall()
@@ -45,6 +50,11 @@ class TestObject(unittest.TestCase):
         ball = Ball(400, 200, (400, 400))
         a = ball.check_collision_wall()
         self.assertEqual(a, 2)
+    
+    def test_ball_collision_with_wall_returns_false(self):
+        ball = Ball(200, 200, (400, 400))
+        a = ball.check_collision_wall()
+        self.assertEqual(a, None)
 
     def test_ball_reset_works(self):
         self.ball.move()
@@ -82,7 +92,7 @@ class TestObject(unittest.TestCase):
         self.paddle.down = True
         self.paddle.move()
         self.paddle.reset()
-        self.assertEqual((self.paddle.x, self.paddle.y), (10, 175))
+        self.assertEqual((self.paddle.x, self.paddle.y, self.paddle.up, self.paddle.down), (10, 175, False, False))
 
     def test_paddle_velocity_increase_works(self):
         self.paddle.increase_velocity()
