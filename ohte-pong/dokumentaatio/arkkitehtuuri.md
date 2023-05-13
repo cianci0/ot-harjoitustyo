@@ -48,5 +48,5 @@ Funktion kolmas attribuutti db_name määrittää, tallennetaanko pisteet varsin
 
 ### Pelilogiikan sekvenssikaavio
 
-Allaoleva sekvenssikaavio kuvaa pelisilmukan toimintaa yhden iteraation aikana sen jälkeen kun käyttäjä on aloittanut valikosta yksinpelin ja OnePlayer-luokka on alustanut pelisilmukan ja kutsunut sen loop()-funktiota
+Allaoleva sekvenssikaavio kuvaa pelisilmukan toimintaa yhden iteraation ajan sen jälkeen kun käyttäjä on aloittanut valikosta yksinpelin ja OnePlayer-luokka on alustanut pelisilmukan ja kutsunut sen loop()-funktiota. Tämän silmukan iteraation aikana käyttäjä ei paina näppäintä liikuttaakseen mailaansa.
 ![Sekvenssikaavio](./kuvat/sekvenssikaavio2.jpg)
