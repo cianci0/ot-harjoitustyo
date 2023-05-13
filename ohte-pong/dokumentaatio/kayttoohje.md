@@ -1,6 +1,6 @@
 # Käyttöohje
 
-Lataa projektin viimeisin [release]([https://github.com/ohjelmistotekniikka-hy/python-todo-app/releases](https://github.com/cianci0/ot-harjoitustyo/releases))
+Lataa projektin viimeisin [release](https://github.com/cianci0/ot-harjoitustyo/releases)
 
 ## Ohjelman käynnistäminen
 
