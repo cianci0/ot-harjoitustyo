@@ -4,10 +4,18 @@ Lataa projektin viimeisin [release]([https://github.com/ohjelmistotekniikka-hy/p
 
 ## Ohjelman käynnistäminen
 
+Siirry hakemistoon ohte-pong
+
 Asenna riippuvuudet komennolla
 
 ```bash
 poetry install
+```
+
+Luo tarvittavat tietokannat komennolla
+
+```bash
+poetry run invoke build
 ```
 
 ja käynnistä ohjelma komennolla
@@ -16,4 +24,14 @@ ja käynnistä ohjelma komennolla
 poetry run invoke start
 ```
 
-Pääset juuri avautuneesta päävalikosta käsiksi pelin ohjeisiin painamalla "Ohjeet"-nappia
+Voit suorittaa testit ja tarkastella testikattavuutta komennolla
+
+```
+poetry run invoke coverage-report
+```
+
+ja tarkastella lint-virheitä komennolla
+
+```
+poetry run invoke lint
+```
