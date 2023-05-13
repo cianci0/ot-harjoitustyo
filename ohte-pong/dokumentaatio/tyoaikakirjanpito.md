@@ -17,5 +17,11 @@
 - Ohjenäkymän toteutus
 - Docstring
 
-### Yhteensä 45 tuntia
+### 14.5.2023 - 28 tuntia
+- Tietokannan ja tulostaulunäkymän toteutus
+- Koodin siistiminen
+- Testien toteutus, kokonaistestikattavuus nyt 69%
+- Docstring
+
+### Yhteensä 73 tuntia
 
