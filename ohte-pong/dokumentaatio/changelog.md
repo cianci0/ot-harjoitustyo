@@ -12,3 +12,7 @@
 ### 2.5.2023
 - Pelisilmukan ja käyttöliittymän yhteistoiminnan korjaaminen. Nyt pelinäkymän sulkemisen jälkeen käyttöliittymä aukeaa tarkoituksenmukaisesti.
 - Yksin- ja kaksinpelin lopetusnäkymien toteutus pygamessa
+
+### 14.5.2023
+- Ui-, OnePlayer- ja TwoPlayer-luokkien luonti
+- Koko ohjelman testikattavuus nyt 69%
