@@ -11,6 +11,6 @@ def leaderboard_text():
         if len(name) > 9:
             name = name[0:8] + "..."
         scores_text += f"       {rank}. {name} –– {points} pistettä\n"
-        rank += 1 
+        rank += 1
 
     return scores_text
