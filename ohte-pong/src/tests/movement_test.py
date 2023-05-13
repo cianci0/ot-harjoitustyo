@@ -65,9 +65,13 @@ class TestObject(unittest.TestCase):
         self.ball.increase_velocity()
         self.assertEqual(self.ball.velocity, [2, 2])
 
-    def test_ball_randomize_velocity_works(self):
-        self.ball.randomize_velocity()
+    def test_ball_twoplayer_randomize_velocity_works(self):
+        self.ball.randomize_velocity(True)
         self.assertTrue(self.ball.velocity[0] in (self.ball.speed, -self.ball.speed) and self.ball.velocity[1] in (self.ball.speed, -self.ball.speed))
+
+    def test_ball_oneplayer_randomize_velocity_works(self):
+        self.ball.randomize_velocity(False)
+        self.assertTrue(self.ball.velocity[0] == -1 and self.ball.velocity[1] in (self.ball.speed, -self.ball.speed))
 
     def test_paddle_constructor_works(self):
         self.assertNotEqual(self.paddle, None)

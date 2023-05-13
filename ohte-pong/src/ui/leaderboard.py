@@ -1,7 +1,7 @@
 from db.score_database import get_top3
 
 def leaderboard_text():
-    scores = get_top3()
+    scores = get_top3("db")
     rank = 1
     scores_text = "\n"
 

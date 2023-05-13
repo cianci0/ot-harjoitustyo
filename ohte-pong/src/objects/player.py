@@ -2,9 +2,9 @@ class Player:
     """ Player class
 
         Attributes:
-        name: string value for player name.
-        points: integer value for player points.
-        paddle: NoneType. Players get assigned Paddle or NPCPaddle objects outside this module.
+        name: string value for player name
+        points: integer value for player points
+        paddle: NoneType. Players get assigned Paddle or NPCPaddle objects outside this module
     """
     def __init__(self, name):
         self.name = name

@@ -6,14 +6,14 @@ from unittest.mock import MagicMock, patch
 import gameloop
 from objects.movement import Paddle
 from objects.player import Player
-from style import window
+from style import WINDOW
 
 class TestObject(unittest.TestCase):
     def setUp(self):
         self.player1 = Player("1")
         self.player2 = Player("2")
         self.gameloop = gameloop.Gameloop(self.player1, self.player2, 10, False)
-        pg.display.set_mode((window), flags=pg.HIDDEN)
+        pg.display.set_mode((WINDOW), flags=pg.HIDDEN)
         self.ball = gameloop.Ball(200, 200, (400, 400))
 
     def tearDown(self):
@@ -44,10 +44,11 @@ class TestObject(unittest.TestCase):
         self.assertFalse(np.array_equal(arr1, arr2))
 
     def test_change_theme(self):
-        a = self.gameloop.white
-        b = self.gameloop.black
+        self.gameloop.is_paused = False
+        a = self.gameloop.light
+        b = self.gameloop.dark
         self.gameloop.change_theme()
-        self.assertNotEqual((a, b), (self.gameloop.white, self.gameloop.black))
+        self.assertNotEqual((a, b), (self.gameloop.light, self.gameloop.dark))
 
     def test_event_loop(self):
         self.player1.paddle = Paddle(10, 175, 400)
@@ -67,3 +68,8 @@ class TestObject(unittest.TestCase):
         pg.event.get = MagicMock(return_value=[quit])
         self.gameloop.event_loop()
         self.assertFalse(self.gameloop.running)
+
+    def test_event_loop_pause(self):
+        pg.event.post(pg.event.Event(pg.KEYDOWN, {"key": pg.K_SPACE}))
+        self.gameloop.event_loop()
+        self.assertTrue(self.gameloop.is_paused)

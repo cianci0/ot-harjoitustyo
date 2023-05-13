@@ -1,6 +1,6 @@
 import tkinter as tk
-import oneplayer
-import twoplayer
+from oneplayer import OnePlayer
+from twoplayer import TwoPlayer
 from style import TEXT_FONT, HEADER_FONT, INST_TEXT, WINDOW
 from ui.leaderboard import leaderboard_text
 
@@ -69,7 +69,8 @@ class Ui:
             player1_name = player1_entry.get()
             player2_name = "Pong-botti"
             self.root.destroy()
-            oneplayer.start(player1_name, player2_name, length=10)
+            oneplayer = OnePlayer(player1_name, player2_name)
+            oneplayer.start()
             init_window()
 
         self.start_button.config(command=start_game)
@@ -116,7 +117,8 @@ class Ui:
             player1_name = player1_entry.get()
             player2_name = player2_entry.get()
             self.root.destroy()
-            twoplayer.start(player1_name, player2_name, length=int(length_var.get()))
+            twoplayer = TwoPlayer(player1_name, player2_name, length=int(length_var.get()))
+            twoplayer.start()
             init_window()
 
         self.start_button.config(command=start_game)
