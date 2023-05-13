@@ -3,9 +3,9 @@
 ### Luokkakaavio
 ![Luokkakaavio](./kuvat/luokka.png)
 
-Ohjelmassa on kokonaisuudessaan kahdeksan luokkaa, joista kaksinpelissä käytetään kuutta ja yksinpelissä seitsemää. 
+Ohjelmassa on kokonaisuudessaan kahdeksan luokkaa. Luokka <strong>Ui</strong> vastaa käyttöliittymän toteutuksesta, luokat <strong>OnePlayer</strong> ja <strong>TwoPlayer</strong> pelin alustuksesta ja loput pelilogiikasta. 
 
-Sekä yksin- että kaksinpelissä käytetään samaa <strong>Gameloop</strong>-luokkaa, jonka takia se on valitettavan monimutkainen ja vaikeasti testattava. <strong>Player</strong>-objektit ja <strong>Gameloop</strong>-luokka alustetaan pelityypistä riippuen src-hakemiston juuressa sijaitsevissa <strong>OnePlayer</strong>- ja <strong>TwoPlayer</strong> -luokissa, jonka jälkeen niissä kutsutaan Gameloop-luokan metodia <strong>loop()</strong>, joka aloittaa pelin. Gameloop-luokka saa yhedksi attribuutiksi <strong>Clock</strong>-olion, joka toimii pitkälti kuten pygame-kirjaston Clock-olio.
+Sekä yksin- että kaksinpelissä käytetään samaa <strong>Gameloop</strong>-luokkaa, jonka takia se on valitettavan monimutkainen. <strong>Player</strong>-objektit ja <strong>Gameloop</strong>-luokka alustetaan pelityypistä riippuen src-hakemiston juuressa sijaitsevissa <strong>OnePlayer</strong>- ja <strong>TwoPlayer</strong> -luokissa, jonka jälkeen niissä kutsutaan Gameloop-luokan metodia <strong>loop()</strong>, joka aloittaa pelin. Gameloop-luokka saa yhedksi attribuutikseen <strong>Clock</strong>-olion, joka toimii pitkälti kuten pygame-kirjaston kello.
 
 ### Pakkauskaavio
 ![Pakkauskaavio](./kuvat/pakkaus.png)
