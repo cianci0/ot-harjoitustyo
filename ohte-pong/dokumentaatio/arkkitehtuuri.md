@@ -11,7 +11,7 @@ Player-olio saa attribuutikseen <strong>Paddle</strong>- tai <strong>NPCPaddle</
 
 Gameloop-olio saa attribuuteikseen <strong>Ball</strong>-olion, joka vastaa pallon liikkeestä ja renderöinnistä sekä <strong>Clock</strong>-olion, joka toimii pitkälti kuten pygame-kirjaston kello.
 
-Ball- Paddle- sekä NPCPaddle-luokat sijaitsevat objects-hakemiston tiedostossa movement.py.
+Ball- Paddle- sekä NPCPaddle-luokat sijaitsevat objects-hakemiston tiedostossa movement.py, muut luokat sijaitsevat omissa tiedostoissaan.
 
 ### Pakkauskaavio
 ![Pakkauskaavio](./kuvat/pakkaus.png)
