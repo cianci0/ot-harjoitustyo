@@ -28,3 +28,6 @@ Näistä viidestä näkymästä tulostaulu on vielä toteuttamatta. Kaikki näky
 
 ### Sekvenssikaavio
 ![Sekvenssikaavio](./kuvat/sekvenssikaavio1.jpg))
+
+### Pelilogiikan sekvenssikaavio
+![Sekvenssikaavio](./kuvat/sekvenssikaavio2.jpg))
