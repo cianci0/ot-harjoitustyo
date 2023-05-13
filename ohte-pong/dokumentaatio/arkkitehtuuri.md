@@ -28,9 +28,11 @@ Käyttöliittymä sisältää viisi eri näkymää:
   ja
   - ohjenäkymään
 
-Näistä viidestä näkymästä tulostaulu on vielä toteuttamatta. Kaikki näkymät on toteutettu samassa tiedostossa yhdessä tkinter-ikkunassa, jossa nappia painettaessa ja toiseen näkymään siirryttäessä poistetaan tarvittavat widgetit ja luodaan uudet tilalle.
+Jokaisesta näkymästä pääsee takaisin päävalikkoon.
 
-### Sekvenssikaavio
+Allaoleva sekvenssikaavio kuvaa ohjelman toimintaa "poetry run invoke start"-komennon kutsuhetkestä pelisilmukan alkuhetkeen ja pelisilmukan lopetushetkestä pisteiden tallennukseen. Pelilogiikkaa kuvataan tarkemmin seuraavassa kaaviossa.
+
+### Pelin alustuksen sekvenssikaavio
 ![Sekvenssikaavio](./kuvat/sekvenssikaavio1.jpg)
 
 ### Pelilogiikan sekvenssikaavio
