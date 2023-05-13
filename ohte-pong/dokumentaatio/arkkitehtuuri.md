@@ -27,4 +27,4 @@ Käyttöliittymä sisältää viisi eri näkymää:
 Näistä viidestä näkymästä tulostaulu on vielä toteuttamatta. Kaikki näkymät on toteutettu samassa tiedostossa yhdessä tkinter-ikkunassa, jossa nappia painettaessa ja toiseen näkymään siirryttäessä poistetaan tarvittavat widgetit ja luodaan uudet tilalle.
 
 ### Sekvenssikaavio
-![Sekvenssikaavio](./kuvat/nettisivu0.pdf)
+![Sekvenssikaavio](./kuvat/nettisivu0-1.png))
