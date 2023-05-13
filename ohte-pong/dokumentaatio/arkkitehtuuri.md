@@ -33,7 +33,7 @@ Jokaisesta näkymästä pääsee takaisin päävalikkoon.
 
 ### Pelin alustuksen sekvenssikaavio
 
-Allaoleva sekvenssikaavio kuvaa ohjelman toimintaa "poetry run invoke start"-komennon kutsuhetkestä pelisilmukan alkuhetkeen ja pelisilmukan lopetushetkestä pisteiden tallennukseen. Pelisilmukan logiikkaa kuvataan tarkemmin seuraavassa kaaviossa. Poisrajaantuneessa insert_score()-funktiokutsussa oikeassa alareunassa lukee 
+Alla oleva sekvenssikaavio kuvaa ohjelman toimintaa "poetry run invoke start"-komennon kutsuhetkestä pelisilmukan alkuhetkeen ja pelisilmukan lopetushetkestä pisteiden tallennukseen. Pelisilmukan logiikkaa kuvataan tarkemmin seuraavassa kaaviossa. Poisrajaantuneessa insert_score()-funktiokutsussa oikeassa alareunassa lukee 
 
 conn = globals()["db"]
 
@@ -41,11 +41,11 @@ db.execute("INSERT INTO Scores
 (player, score) VALUES (?, ?)",
 ("Pekka", 2))
 
-Funktion kolmas attribuutti db_name määrittää, tallennetaanko pisteet varsinaiseen tietokantaan "scores.db", jonka yhteys on tallennettu muuttujaan nimeltä db, vai testitietokantaan "test.db", jonka yhteys on tallennettu muuttujaan nimeltä test_db
+Funktion kolmas attribuutti db_name (tässä tapauksessa "db") määrittää, tallennetaanko pisteet varsinaiseen tietokantaan "scores.db", jonka yhteys on tallennettu muuttujaan nimeltä db, vai testitietokantaan "test.db", jonka yhteys on tallennettu muuttujaan nimeltä test_db
 
 ![Sekvenssikaavio](./kuvat/sekvenssikaavio1.jpg)
 
 ### Pelilogiikan sekvenssikaavio
 
-Allaoleva sekvenssikaavio kuvaa pelisilmukan toimintaa yhden iteraation ajan sen jälkeen kun käyttäjä on aloittanut valikosta yksinpelin ja OnePlayer-luokka on alustanut pelisilmukan ja kutsunut sen loop()-funktiota. Tämän silmukan iteraation aikana käyttäjä ei paina näppäintä liikuttaakseen mailaansa.
+Alla oleva sekvenssikaavio kuvaa pelisilmukan toimintaa yhden iteraation ajan sen jälkeen kun käyttäjä on aloittanut valikosta yksinpelin ja OnePlayer-luokka on alustanut pelisilmukan ja kutsunut sen loop()-funktiota. Tämän silmukan iteraation aikana käyttäjä ei paina näppäintä liikuttaakseen mailaansa.
 ![Sekvenssikaavio](./kuvat/sekvenssikaavio2.jpg)
