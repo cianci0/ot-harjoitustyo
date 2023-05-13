@@ -16,7 +16,7 @@ Ball- Paddle- sekä NPCPaddle-luokat sijaitsevat objects-hakemiston tiedostossa 
 ### Pakkauskaavio
 ![Pakkauskaavio](./kuvat/pakkaus.png)
 
-Tällä hetkellä ohjelman käyttöliittymä on kokonaan src-hakemiston juuressa sijaitsevassa index.py -tiedostossa, mutta tarkoituksenani on jakaa se järkeviin osiin uuteen ui-hakemistoon, josta tulee objects-hakemiston rinnakkaishakemisto.
+Ohjelman käyttöliittymäkoodi sijaitsee ui-hakemistossa, tietokantakoodi db-hakemistossa ja pelilogiikkakoodi objects-hakemistossa.
 
 ### Käyttöliittymä
 
