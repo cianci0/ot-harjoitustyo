@@ -30,9 +30,9 @@ Käyttöliittymä sisältää viisi eri näkymää:
 
 Jokaisesta näkymästä pääsee takaisin päävalikkoon.
 
-Allaoleva sekvenssikaavio kuvaa ohjelman toimintaa "poetry run invoke start"-komennon kutsuhetkestä pelisilmukan alkuhetkeen ja pelisilmukan lopetushetkestä pisteiden tallennukseen. Pelilogiikkaa kuvataan tarkemmin seuraavassa kaaviossa.
-
 ### Pelin alustuksen sekvenssikaavio
+
+Allaoleva sekvenssikaavio kuvaa ohjelman toimintaa "poetry run invoke start"-komennon kutsuhetkestä pelisilmukan alkuhetkeen ja pelisilmukan lopetushetkestä pisteiden tallennukseen. Pelilogiikkaa kuvataan tarkemmin seuraavassa kaaviossa.
 ![Sekvenssikaavio](./kuvat/sekvenssikaavio1.jpg)
 
 ### Pelilogiikan sekvenssikaavio
