@@ -34,7 +34,7 @@ Jokaisesta näkymästä pääsee takaisin päävalikkoon.
 
 ### Pelin alustuksen sekvenssikaavio
 
-Allaoleva sekvenssikaavio kuvaa ohjelman toimintaa "poetry run invoke start"-komennon kutsuhetkestä pelisilmukan alkuhetkeen ja pelisilmukan lopetushetkestä pisteiden tallennukseen. Pelilogiikkaa kuvataan tarkemmin seuraavassa kaaviossa. Poisrajaantuneessa insert_score()-funktiokutsussa oikeassa alareunassa lukee 
+Allaoleva sekvenssikaavio kuvaa ohjelman toimintaa "poetry run invoke start"-komennon kutsuhetkestä pelisilmukan alkuhetkeen ja pelisilmukan lopetushetkestä pisteiden tallennukseen. Pelisilmukan logiikkaa kuvataan tarkemmin seuraavassa kaaviossa. Poisrajaantuneessa insert_score()-funktiokutsussa oikeassa alareunassa lukee 
 
 conn = globals()["db"]
 
@@ -47,4 +47,6 @@ Funktion kolmas attribuutti db_name määrittää, tallennetaanko pisteet varsin
 ![Sekvenssikaavio](./kuvat/sekvenssikaavio1.jpg)
 
 ### Pelilogiikan sekvenssikaavio
+
+Allaoleva sekvenssikaavio kuvaa pelisilmukan toimintaa yhden iteraation aikana sen jälkeen kun käyttäjä on aloittanut valikosta yksinpelin ja OnePlayer-luokka on alustanut pelisilmukan ja kutsunut sen loop()-funktiota
 ![Sekvenssikaavio](./kuvat/sekvenssikaavio2.jpg)
