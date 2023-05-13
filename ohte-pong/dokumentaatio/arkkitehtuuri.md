@@ -34,7 +34,12 @@ Jokaisesta näkymästä pääsee takaisin päävalikkoon.
 
 ### Pelin alustuksen sekvenssikaavio
 
-Allaoleva sekvenssikaavio kuvaa ohjelman toimintaa "poetry run invoke start"-komennon kutsuhetkestä pelisilmukan alkuhetkeen ja pelisilmukan lopetushetkestä pisteiden tallennukseen. Pelilogiikkaa kuvataan tarkemmin seuraavassa kaaviossa.
+Allaoleva sekvenssikaavio kuvaa ohjelman toimintaa "poetry run invoke start"-komennon kutsuhetkestä pelisilmukan alkuhetkeen ja pelisilmukan lopetushetkestä pisteiden tallennukseen. Pelilogiikkaa kuvataan tarkemmin seuraavassa kaaviossa. Poisrajaantuneessa funktiokutsussa oikeassa alareunassa lukee 
+conn = globals()["db"]
+db.execute("INSERT INTO Scores
+(player, score) VALUES (?, ?)",
+("Pekka", 2))
+
 ![Sekvenssikaavio](./kuvat/sekvenssikaavio1.jpg)
 
 ### Pelilogiikan sekvenssikaavio
