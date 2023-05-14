@@ -5,7 +5,7 @@ COLORS = [((255, 255, 255), (0, 0, 0)),
 ((245, 245, 245), (66, 66, 66)),
 ((150, 14, 60), (60, 190, 255))]
 
-WHITE = COLORS[0][0]
+WHITE = (255, 255, 255)
 
 TEXT_FONT = ("Helvetica", 14)
 HEADER_FONT = ("Helvetica", 24)

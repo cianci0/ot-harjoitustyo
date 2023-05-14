@@ -10,18 +10,18 @@ class Gameloop:
     """Class for handling game loop
 
         Attributes:
-        screen: pygame.display object to display the game.
-        font: pygame.font.SysFont object to display player names and scores.
-        twoplayer: Boolean value; True in case of two-player game, otherwise False.
-        clock: Clock object to monitor time.
+        screen: pygame.display object to display the game
+        font: pygame.font.SysFont object to display player names and scores
+        twoplayer: Boolean value; True in case of two-player game, otherwise False
+        clock: Clock object to monitor time
         ball: Ball object
-        player1: Player object that controls the left-hand paddle.
-        player2: Player object that controls the right-hand side paddle.
-        length: integer that determines game length if twoplayer is True.
-        is_paused: Boolean value; True if the game is paused at any given moment, otherwise False.
-        ended: Boolean value; True if the game has ended and exited, otherwise False.
-        running: Boolean value that determines whether game loop is running or not.
-        rally_length: integer that keeps track of the length of the current rally.
+        player1: Player object that controls the left-hand paddle
+        player2: Player object that controls the right-hand side paddle
+        length: integer that determines game length if twoplayer is True
+        is_paused: Boolean value; True if the game is paused at any given moment, otherwise Fals
+        ended: Boolean value; True if the game has finished, otherwise False
+        running: Boolean value that determines whether game loop is running or not
+        rally_length: integer that keeps track of the length of the current rally
     """
 
     def __init__(self, player1, player2, length, twoplayer):
