@@ -15,4 +15,4 @@
 
 ### 14.5.2023
 - Ui-, OnePlayer- ja TwoPlayer-luokkien luonti
-- Koko ohjelman testikattavuus nyt 69%
+- Koko ohjelman testikattavuus nyt 70%
