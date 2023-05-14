@@ -6,7 +6,7 @@ Ohjelmassa on kokonaisuudessaan yhdeksän luokkaa. Luokka <strong>Ui</strong> va
 
 Sekä yksin- että kaksinpelissä käytetään samaa <strong>Gameloop</strong>-luokkaa, jonka takia se on hieman monimutkainen. <strong>Player</strong>-objektit ja Gameloop-luokka alustetaan pelityypistä riippuen src-hakemiston juuressa sijaitsevissa <strong>OnePlayer</strong>- ja <strong>TwoPlayer</strong> -luokissa, jonka jälkeen niissä kutsutaan Gameloop-luokan metodia <strong>loop()</strong>, joka aloittaa pelin. 
 
-Player-olio saa attribuutikseen <strong>Paddle</strong>- tai <strong>NPCPaddle</strong>-olion vastaamaan mailan liikkeestä ja renderöinnistä.
+Player-olio saa attribuutikseen <strong>Paddle</strong>- tai <strong>NPCPaddle</strong>-olion vastaamaan mailan liikkeestä ja renderöinnistä. NPCPaddle-luokka perii Paddle-luokan ominaisuudet.
 
 Gameloop-olio saa attribuuteikseen <strong>Ball</strong>-olion, joka vastaa pallon liikkeestä ja renderöinnistä sekä <strong>Clock</strong>-olion, joka toimii pitkälti kuten pygame-kirjaston kello.
 
@@ -41,11 +41,11 @@ db.execute("INSERT INTO Scores
 (player, score) VALUES (?, ?)",
 ("Pekka", 2))
 
-Funktion kolmas attribuutti db_name (tässä tapauksessa "db") määrittää, tallennetaanko pisteet varsinaiseen tietokantaan "scores.db", jonka yhteys on tallennettu muuttujaan nimeltä db, vai testitietokantaan "test.db", jonka yhteys on tallennettu muuttujaan nimeltä test_db
+insert_scores()-funktion kolmas attribuutti db_name (tässä tapauksessa "db") määrittää, tallennetaanko pisteet varsinaiseen tietokantaan "scores.db", jonka yhteys on tallennettu tiedostossa score_database.py muuttujaan nimeltä db, vai testitietokantaan "test.db", jonka yhteys on tallennettu muuttujaan nimeltä test_db
 
 ![Sekvenssikaavio](./kuvat/sekvenssikaavio1.jpg)
 
 ### Pelilogiikan sekvenssikaavio
 
-Alla oleva sekvenssikaavio kuvaa pelisilmukan toimintaa yhden iteraation ajan sen jälkeen kun käyttäjä on aloittanut valikosta yksinpelin ja OnePlayer-luokka on alustanut pelisilmukan ja kutsunut sen loop()-funktiota. Tämän silmukan iteraation aikana käyttäjä ei paina näppäintä liikuttaakseen mailaansa.
+Alla oleva sekvenssikaavio kuvaa pelisilmukan toimintaa yhden iteraation ajan sen jälkeen kun käyttäjä on aloittanut valikosta yksinpelin ja OnePlayer-luokka on alustanut pelisilmukan ja kutsunut sen loop()-funktiota. Tämän silmukan iteraation aikana käyttäjä ei paina mitään näppäintä.
 ![Sekvenssikaavio](./kuvat/sekvenssikaavio2.jpg)
