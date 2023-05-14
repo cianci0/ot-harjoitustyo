@@ -1,6 +1,6 @@
 # Käyttöohje
 
-Lataa projektin lopullinen [release](https://github.com/cianci0/ot-harjoitustyo/releases)
+Lataa projektin lopullinen [release](https://github.com/cianci0/ot-harjoitustyo/releases/tag/loppupalautus)
 
 ## Ohjelman käynnistäminen
 
