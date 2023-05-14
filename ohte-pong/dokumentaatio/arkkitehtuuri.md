@@ -47,5 +47,5 @@ insert_scores()-funktion kolmas attribuutti db_name (tässä tapauksessa "db") m
 
 ### Pelilogiikan sekvenssikaavio
 
-Alla oleva sekvenssikaavio kuvaa pelisilmukan toimintaa yhden iteraation ajan sen jälkeen kun käyttäjä on aloittanut valikosta yksinpelin ja OnePlayer-luokka on alustanut pelisilmukan ja kutsunut sen loop()-funktiota. Tämän silmukan iteraation aikana käyttäjä ei paina näppäintä liikuttaakseen mailaansa.
+Alla oleva sekvenssikaavio kuvaa pelisilmukan toimintaa yhden iteraation ajan sen jälkeen kun käyttäjä on aloittanut valikosta yksinpelin ja OnePlayer-luokka on alustanut pelisilmukan ja kutsunut sen loop()-funktiota. Tämän silmukan iteraation aikana käyttäjä ei paina mitään näppäintä.
 ![Sekvenssikaavio](./kuvat/sekvenssikaavio2.jpg)
