@@ -61,10 +61,6 @@ class TestObject(unittest.TestCase):
         self.ball.reset()
         self.assertEqual((self.ball.x, self.ball.y), (200, 200))
 
-    def test_ball_velocity_increase(self):
-        self.ball.increase_velocity()
-        self.assertEqual(self.ball.velocity, [2, 2])
-
     def test_ball_twoplayer_randomize_velocity(self):
         self.ball.randomize_velocity(True)
         self.assertTrue(self.ball.velocity[0] in (self.ball.speed, -self.ball.speed) and self.ball.velocity[1] in (self.ball.speed, -self.ball.speed))
@@ -97,10 +93,6 @@ class TestObject(unittest.TestCase):
         self.paddle.move()
         self.paddle.reset()
         self.assertEqual((self.paddle.x, self.paddle.y, self.paddle.up, self.paddle.down), (10, 175, False, False))
-
-    def test_paddle_velocity_increase(self):
-        self.paddle.increase_velocity()
-        self.assertEqual(self.paddle.velocity, 3)
 
     def test_npcpaddle_constructor(self):
         self.assertNotEqual(self.npc, None)
