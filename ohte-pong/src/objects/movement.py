@@ -1,5 +1,5 @@
 from random import choice
-import pygame
+import pygame as pg
 from style import WHITE
 
 class Ball:
@@ -70,7 +70,7 @@ class Ball:
         self.y = self.y_orig
 
     def draw(self, screen):
-        pygame.draw.circle(screen, (WHITE), (self.x, self.y), self.diameter)
+        pg.draw.circle(screen, (WHITE), (self.x, self.y), self.diameter)
 
 
 class Paddle:
@@ -116,7 +116,7 @@ class Paddle:
         self.down = False
 
     def draw(self, screen):
-        pygame.draw.rect(
+        pg.draw.rect(
             screen, (WHITE), (self.x, self.y, self.width, self.height))
 
 

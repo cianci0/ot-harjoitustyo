@@ -1,7 +1,5 @@
 import pygame as pg
-import numpy as np
 import os
-from random import randrange
 from objects.movement import Ball
 from objects.clock import Clock
 from style import WINDOW, COLORS

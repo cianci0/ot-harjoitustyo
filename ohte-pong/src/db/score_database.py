@@ -6,7 +6,7 @@ db.isolation_level = None
 test_db = sqlite3.connect("test.db") 
 test_db.isolation_level = None
 
-def create_table():
+def create_tables():
     db.execute("""CREATE TABLE IF NOT EXISTS 
                Scores (id INTEGER PRIMARY KEY, 
                player TEXT, score INTEGER)""")
