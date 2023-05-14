@@ -17,9 +17,9 @@ Luo tarvittavat tietokannat komennolla
 ```bash
 poetry run invoke build
 ```
-Huom! Ohjelma ei toimi eikä sitä voi testata ennen kuin tietokannat on luotu
+Huom! Ohjelma ei toimi eikä sitä voi testata ennen tietokantojen luomista
 
-ja käynnistä ohjelma komennolla
+Käynnistä ohjelma komennolla
 
 ```
 poetry run invoke start
