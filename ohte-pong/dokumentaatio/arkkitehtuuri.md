@@ -49,3 +49,15 @@ insert_scores()-funktion kolmas attribuutti db_name (tässä tapauksessa "db") m
 
 Alla oleva sekvenssikaavio kuvaa pelisilmukan toimintaa yhden iteraation ajan sen jälkeen kun käyttäjä on aloittanut valikosta yksinpelin ja OnePlayer-luokka on alustanut pelisilmukan ja kutsunut sen loop()-funktiota. Tämän silmukan iteraation aikana käyttäjä ei paina mitään näppäintä.
 ![Sekvenssikaavio](./kuvat/sekvenssikaavio2.jpg)
+
+### Ulkoiset kirjastot
+
+Ohjelmassa hyödynnetään seuraavia kirjastoja:
+- os
+- random
+- pygame
+- sqlite3
+
+Tämän lisäksi ohjelman testeissä hyödynnetään seuraavia kirjastoja:
+- unittest ja sen alakirjasto mock
+- numpy
