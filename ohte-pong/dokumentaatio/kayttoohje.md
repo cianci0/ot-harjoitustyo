@@ -4,7 +4,7 @@ Lataa projektin viimeisin [release](https://github.com/cianci0/ot-harjoitustyo/r
 
 ## Ohjelman käynnistäminen
 
-Siirry hakemistoon ohte-pong
+Siirry hakemistoon <em>ohte-pong</em>
 
 Asenna riippuvuudet komennolla
 
