@@ -41,7 +41,7 @@ db.execute("INSERT INTO Scores
 (player, score) VALUES (?, ?)",
 ("Pekka", 2))
 
-Funktion kolmas attribuutti db_name (tässä tapauksessa "db") määrittää, tallennetaanko pisteet varsinaiseen tietokantaan "scores.db", jonka yhteys on tallennettu muuttujaan nimeltä db, vai testitietokantaan "test.db", jonka yhteys on tallennettu muuttujaan nimeltä test_db
+insert_scores()-funktion kolmas attribuutti db_name (tässä tapauksessa "db") määrittää, tallennetaanko pisteet varsinaiseen tietokantaan "scores.db", jonka yhteys on tallennettu tiedostossa score_database.py muuttujaan nimeltä db, vai testitietokantaan "test.db", jonka yhteys on tallennettu muuttujaan nimeltä test_db
 
 ![Sekvenssikaavio](./kuvat/sekvenssikaavio1.jpg)
 
