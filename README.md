@@ -1,7 +1,3 @@
-### Ohjelman käynnistys
-
-Komento "poetry run invoke start" käynnistää ohjelman.
-
 ### Dokumentaatio
 
 [Arkkitehtuuri](https://github.com/cianci0/ot-harjoitustyo/blob/master/ohte-pong/dokumentaatio/arkkitehtuuri.md)
