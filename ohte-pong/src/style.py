@@ -11,7 +11,8 @@ TEXT_FONT = ("Helvetica", 14)
 HEADER_FONT = ("Helvetica", 24)
 INST_TEXT = """      Mailoja ohjataan WS- ja nuolinäppäimillä
         
-      Välilyönti aloittaa ja pausettaa pelin 
+      Välilyönti aloittaa ja pausettaa pelin
+      sekä aloittaa uuden pelin 
 
       Yksinpeli päättyy, kun pallo osuu 
       takanasi olevaan seinään
