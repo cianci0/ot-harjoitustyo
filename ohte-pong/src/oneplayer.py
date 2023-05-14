@@ -5,6 +5,20 @@ from gameloop import Gameloop
 from db.score_database import insert_score
 
 class OnePlayer:
+    """ Class for single-player game initialization
+
+        Attributes:
+        player1_name: string value for player 1 name
+        player2_name: string value for player 2 name
+        gameloop: NoneType. OnePlayer object gets assigned a Gameloop object in start() -function
+        length: meaningless integer value necessary for Gameloop initialization
+        scores: list object that holds player scores obtained in one instance of initialization
+        db: string value that holds the name of the variable in score_database.py that connects to the database in which scores will be stored
+
+        Methods:
+        insert_scores(self): Insert scores one-by-one into database
+        start(self): Initalize Player-objects, assign paddles to them and start game loop. Returns True
+    """
     def __init__(self, player1, player2):
         self.player1_name = player1
         self.player2_name = player2

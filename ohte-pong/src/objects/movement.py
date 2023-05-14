@@ -6,15 +6,25 @@ class Ball:
     """Ball class
 
        Attributes:
-       x: integer value for x-coordinate.
-       x_orig: integer value for starting x-coordinate that doesn't change.
-       y: integer value for y-coordinate.
-       y_orig: integer value for starting y-coordinate that doesn't change.
-       diameter: integer value for ball diameter.
-       speed: integer value for velocity (pixels per tick).
-       velocity: list value for directional velocity. velocity[0] = speed on x-axis, velocity[1] = speed on y-axis.
-       window_width: integer value for width of the window that the ball exists in.
-       window_height: integer value for height of the window that the ball exists in.
+       x: integer value for x-coordinate
+       x_orig: integer value to store original x-coordinate
+       y: integer value for y-coordinate
+       y_orig: integer value to store original y-coordinate
+       diameter: integer value for ball diameter
+       speed: integer value for ball velocity (pixels per iteration)
+       velocity: list value for directional velocity. velocity[0] = speed on x-axis, velocity[1] = speed on y-axis
+       window_width: integer value for width of the window that the ball exists in
+       window_height: integer value for height of the window that the ball exists in
+
+       Methods:
+       move(self): Move ball
+       randomize_velocity(self): Randomize ball direction
+       check_collision_paddle(self, paddle_left, paddle_right): Check if ball collides with paddles. Returns True if so, otherwise returns False
+       check_collision_ceiling_floor(self): Check if ball collides with ceiling or floor and change ball direction accordingly
+       check_collision_wall(self): Check if ball collides with walls. Returns 1 if ball collides with left wall and 2 if it collides with right wall
+       reset(self): Reset ball to starting position
+       draw(self, screen): Render ball on screen
+
     """
     
     def __init__(self, x, y, window):
@@ -35,11 +45,6 @@ class Ball:
                             choice([-self.speed, self.speed])]
         else:
             self.velocity = [-1, choice([-self.speed, self.speed])]
-
-    def increase_velocity(self):
-        self.speed += 1
-        self.velocity[0] = self.speed
-        self.velocity[1] = self.speed
 
     def check_collision_paddle(self, paddle_left, paddle_right):
         if self.x == paddle_left.x + 10 and self.y in range(paddle_left.y, paddle_left.y + paddle_left.height):
@@ -72,16 +77,21 @@ class Paddle:
     """Paddle class
 
        Attributes:
-       x: integer value for x-coordinate.
-       x_orig: integer value for starting x-coordinate that doesn't change.
-       y: integer value for y-coordinate.
-       y_orig: integer value for starting y-coordinate that doesn't change.
-       width: integer value for paddle width.
-       height: integer value for paddle height.
-       up: Boolean value; True if paddle is being instructed to move up, otherwise False.
-       down: Boolean value; True if paddle is being instructed to move down, otherwise False.
-       velocity: integer value for speed on y-axis (pixels per tick).
-       boundary: integer value for height of the window that the paddle exists in.
+       x: integer value for x-coordinate
+       x_orig: integer value for starting x-coordinate that doesn't change
+       y: integer value for y-coordinate
+       y_orig: integer value for starting y-coordinate that doesn't change
+       width: integer value for paddle width
+       height: integer value for paddle height
+       up: Boolean value; True if paddle is being instructed to move up, otherwise False
+       down: Boolean value; True if paddle is being instructed to move down, otherwise False
+       velocity: integer value for speed on y-axis (pixels per tick)
+       boundary: integer value for height of the window that the paddle exists in
+
+       Methods:
+       move(self): Move paddle
+       reset(self): Reset paddle to starting position
+       draw(self, screen): Render paddle on screen
     """
     def __init__(self, x, y, window_height):
         self.x = self.x_orig = x
@@ -105,9 +115,6 @@ class Paddle:
         self.up = False
         self.down = False
 
-    def increase_velocity(self):
-        self.velocity += 1
-
     def draw(self, screen):
         pygame.draw.rect(
             screen, (WHITE), (self.x, self.y, self.width, self.height))
@@ -117,17 +124,23 @@ class NPCPaddle(Paddle):
     """Class for non-player character paddle that inherits the Paddle class.
 
        Attributes:
-       x: integer value for x-coordinate.
-       x_orig: integer value for starting x-coordinate that doesn't change.
-       y: integer value for y-coordinate.
-       y_orig: integer value for starting y-coordinate that doesn't change.
-       width: integer value for paddle width.
-       height: integer value for paddle height.
-       up: Boolean value; True if paddle is being instructed to move up, otherwise False.
-       down: Boolean value; True if paddle is being instructed to move down, otherwise False.
-       velocity: integer value for speed on y-axis (pixels per tick).
-       boundary: integer value for height of the window that the paddle exists in.
-       ball: Ball object for NPCPaddle to follow.
+       x: integer value for x-coordinate
+       x_orig: integer value for starting x-coordinate that doesn't change
+       y: integer value for y-coordinate
+       y_orig: integer value for starting y-coordinate that doesn't change
+       width: integer value for paddle width
+       height: integer value for paddle height
+       up: Boolean value; True if paddle is being instructed to move up, otherwise False
+       down: Boolean value; True if paddle is being instructed to move down, otherwise False
+       velocity: integer value for speed on y-axis (pixels per tick)
+       boundary: integer value for height of the window that the paddle exists in
+       ball: Ball object for NPCPaddle to follow
+
+       Methods:
+       move(self): Move paddle
+       reset(self): Reset paddle to starting position
+       draw(self, screen): Render paddle on screen
+       follow_ball(self): Follow ball
     """
     def __init__(self, x, y, window_height, ball):
         super().__init__(x, y, window_height)

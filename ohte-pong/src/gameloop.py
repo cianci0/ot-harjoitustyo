@@ -22,6 +22,14 @@ class Gameloop:
         ended: Boolean value; True if the game has finished, otherwise False
         running: Boolean value that determines whether game loop is running or not
         rally_length: integer that keeps track of the length of the current rally
+
+        Methods:
+        change_theme(self): Change color theme if game is not paused. Returns False if game is paused
+        event_loop(self): Loop to handle pygame events
+        display_score(self): Render score on pygame window
+        render(self): Render ball and paddles on pygame window
+        end(self, player): Loop to handle pygame events and render score/winner after game has ended
+        loop(self): Start game loop
     """
 
     def __init__(self, player1, player2, length, twoplayer):

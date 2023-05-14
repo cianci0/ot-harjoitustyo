@@ -5,12 +5,36 @@ from style import TEXT_FONT, HEADER_FONT, INST_TEXT, WINDOW
 from ui.leaderboard import leaderboard_text
 
 class Ui:
+    """ Ui class for tkinter interface
+
+    Attributes:
+    root: tkinter.Tk object
+    header: tkinter.Label object for header text
+    singleplayer_button: tkinter.Button object for button to open single player game configuration window
+    twoplayer_button: tkinter.Button object for button to open multiplayer game configuration window
+    standings_button: tkinter.Button object for button to open standings
+    instructions_button: tkinter.Button object for button to open instructions
+    footer: tkinter.Label object for footer text
+    start_button: tkinter.Button object for button to start game
+    back_button: tkinter.Button object for button to return to main menu
+    standings_header: tkinter.Label object for standings header text
+    instructions_header: tkinter.Label object for instructions header text
+    instructions_text: tkinter.Text object to initialize instructions text. The actual text gets inserted inside the open_standings() -function
+
+    Methods:
+    configure_window(self): Center tkinter window, set title and background color
+    forget_mainmenu(self): Remove all widgets except footer from main menu
+    open_mainmenu(self, first_opening): Add main menu widgets. Add footer only first time opening menu
+    start_oneplayer(self): Open single player game configuration window 
+    start_twoplayer(self): Open multiplayer game configuration window
+    open_standings(self): Open standings
+    open_instructions(self): Open instructions
+    init_window(self): Initialize interface, configure window, open main menu and start tkinter loop
+    """
     def __init__(self):
         self.root = tk.Tk()
-
         self._screen_width = self.root.winfo_screenwidth()
         self._screen_height = self.root.winfo_screenheight()
-
         self.header = tk.Label(self.root, text="Pong", font=HEADER_FONT, fg="white", bg="#1D3557")
         self.singleplayer_button = tk.Button(self.root, text="Yksinpeli", font=TEXT_FONT, width=20, height=2, command=self.start_oneplayer,
                                              bg="#E63946", fg="white", activebackground="#E07178", activeforeground="white", relief=tk.RAISED)
@@ -21,14 +45,11 @@ class Ui:
         self.instructions_button = tk.Button(self.root, text="Ohjeet", font=TEXT_FONT, width=20, height=2, command=self.open_instructions,
                                              bg="#E63946", fg="white", activebackground="#E07178", activeforeground="white", relief=tk.RAISED)
         self.footer = tk.Label(self.root, text="Ohjelmistotekniikka 2023", font=("Helvetica", 10), fg="white", bg="#1D3557")
-
         self.start_button = tk.Button(self.root, text="Aloita peli", font=TEXT_FONT, width=20, height=2,
                                       bg="#E63946", fg="white", activebackground="#E07178", activeforeground="white", relief=tk.RAISED)
         self.back_button = tk.Button(self.root, text="Takaisin", font=TEXT_FONT, width=20, height=2,
                                      bg="#E63946", fg="white", activebackground="#E07178", activeforeground="white", relief=tk.RAISED)
-
         self.standings_header = tk.Label(self.root, text="Tulostaulu", font=HEADER_FONT, fg="white", bg="#1D3557")
-
         self.instructions_header = tk.Label(self.root, text="Ohjeet", font=HEADER_FONT, fg="white", bg="#1D3557")
         self.instructions_text = tk.Text(self.root, bg="#1D3557", fg="white", relief=tk.FLAT, highlightthickness=0, selectborderwidth=0,
                                          selectbackground="#1D3557", selectforeground="white")

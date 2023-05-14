@@ -1,10 +1,14 @@
 class Player:
-    """ Player class
+    """ Class for player
 
         Attributes:
         name: string value for player name
         points: integer value for player points
         paddle: NoneType. Players get assigned Paddle or NPCPaddle objects outside this module
+
+        Methods:
+        increase_points(self): Increase player points by one
+        reset_points(self): Reset player points to zero
     """
     def __init__(self, name):
         self.name = name
