@@ -1,7 +1,7 @@
 import unittest
 import numpy as np
 import pygame as pg
-from unittest.mock import MagicMock, patch
+from unittest.mock import MagicMock
 import gameloop
 from objects.movement import Paddle
 from objects.player import Player
